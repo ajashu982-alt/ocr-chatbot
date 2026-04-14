@@ -2,3 +2,5 @@ streamlit
 google-cloud-vision
 uvicorn
 httpx
+fastapi
+python-multipart
