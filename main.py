@@ -421,7 +421,7 @@ async def send_list_message(phone: str, body: str, button_text: str, sections: l
         "interactive": {
             "type": "list",
             "body": {"text": body},
-            "action": {"button": button_text, "sections": sections}
+            "action": {"button": button_text, "sections": sections})
 
 from fastapi.responses import HTMLResponse
 @app.get("/", response_class=HTMLResponse)
