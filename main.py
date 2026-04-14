@@ -422,6 +422,20 @@ async def send_list_message(phone: str, body: str, button_text: str, sections: l
             "type": "list",
             "body": {"text": body},
             "action": {"button": button_text, "sections": sections}
+            from fastapi.responses import HTMLResponse
+
+@app.get("/", response_class=HTMLResponse)
+async def root():
+    return """
+    <html>
+        <head><title>Zeapl.ai Demo</title></head>
+        <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+            <h1>🚀 Zeapl.ai WhatsApp OCR Bot is LIVE</h1>
+            <p>The backend is running and listening for WhatsApp messages.</p>
+            <p><b>Webhook URL:</b> /webhook</p>
+        </body>
+    </html>
+    """
         }
     })
 
